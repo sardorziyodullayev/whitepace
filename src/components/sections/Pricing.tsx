@@ -1,19 +1,29 @@
-'use client'
+"use client";
 
 import { Container, Stack, Text, Title, Box, Button } from "@mantine/core";
 import Image from "next/image";
 import { PRICING_DATA } from "@/constants/pricing-data";
-import { Carousel } from '@mantine/carousel';
+import { Carousel } from "@mantine/carousel";
 import TrueIcon from "../../shared/assets/true_icon.svg";
 
 export const Pricing = () => {
 	return (
 		<Container py={80} size="xl">
 			<Stack align="center" mb={40}>
-				<Title order={1} fw={800} ta="center">
+				<Title
+					order={1}
+					fw={800}
+					ta="center"
+					fz={{ base: 40, sm: 44, md: 48, lg: 54, xl: 72 }}
+				>
 					Choose Your Plan
 				</Title>
-				<Text c="dimmed" ta="center" maw={600}>
+				<Text
+					c="dimmed"
+					ta="center"
+					maw={600}
+					fz={{ base: 14, sm: 15, md: 16, lg: 18 }}
+				>
 					Whether you want to get organized, keep your personal life on track, or
 					boost workplace productivity, Evernote has the right plan for you.
 				</Text>
@@ -22,29 +32,29 @@ export const Pricing = () => {
 			<Carousel
 				slideSize="33.3%"
 				slideGap="md"
-        withControls={false}
-        withIndicators={false}
-        style={{display: 'flex', alignItems: 'center', justifyContent: 'space-between'}}
+				controlsOffset="sm"
+				withControls={false}
+				withIndicators={false}
 			>
 				{PRICING_DATA.map(
 					({ id, plan, price, text, features, borderColor, highlighted }) => (
 						<Carousel.Slide key={id}>
 							<Box
 								style={{
-									border: `1px solid ${borderColor}`,
-									borderRadius: 10,
+									width: "100%",
+									maxWidth: 350,
 									padding: 20,
-									backgroundColor: highlighted ? "#043873" : "#fff",
-									color: highlighted ? "#fff" : "#000",
-									transform: highlighted ? "scale(1.05)" : "scale(1)",
-									transition: "all 0.3s ease-in-out",
-									boxShadow: highlighted
-										? "0 8px 20px rgba(0, 0, 0, 0.3)"
-										: "none",
 									display: "flex",
 									flexDirection: "column",
 									justifyContent: "space-between",
 									height: "100%",
+									border: `1px solid ${borderColor}`,
+									borderRadius: 10,
+									backgroundColor: highlighted ? "#043873" : "#fff",
+									color: highlighted ? "#fff" : "#000",
+									transform: highlighted ? "scale(1.05)" : "scale(1)",
+									transition: "all 0.3s ease-in-out",
+									boxShadow: highlighted ? "0 8px 20px rgba(0, 0, 0, 0.3)" : "none",
 								}}
 							>
 								<div>
@@ -87,7 +97,7 @@ export const Pricing = () => {
 								</Button>
 							</Box>
 						</Carousel.Slide>
-					)
+					),
 				)}
 			</Carousel>
 		</Container>
