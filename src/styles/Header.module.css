@@ -1,0 +1,61 @@
+.header {
+	padding: 16px 0;
+	background-color: #043873;
+	position: sticky;
+	top: 0;
+	z-index: 10;
+	transition: all 0.3s ease;
+}
+
+.scrolled {
+	background-color: #022a56;
+	padding: 10px 0;
+	box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+}
+
+.inner {
+	height: 56px;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+
+.links {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	gap: 16px;
+}
+
+.link {
+	display: block;
+	line-height: 1;
+	padding: 8px 12px;
+	border-radius: var(--mantine-radius-sm);
+	text-decoration: none;
+	color: light-dark(var(--mantine-color-white), var(--mantine-color-dark-0));
+	font-size: var(--mantine-font-size-sm);
+	font-weight: 500;
+
+	@mixin hover {
+		background-color: light-dark(
+			var(--mantine-color-gray-0),
+			var(--mantine-color-dark-6)
+		);
+	}
+}
+
+.buttons {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	gap: 16px;
+}
+
+.linkLabel {
+	margin-right: 5px;
+}
+
+.button {
+	color: #043873;
+}
